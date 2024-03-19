@@ -1,0 +1,37 @@
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+public class MainAluno {
+
+    public static void main(String[] args) {
+        ArrayList<Aluno> alunos = new ArrayList<>();
+        alunos.add(new Aluno("João", 7.5));
+        alunos.add(new Aluno("Thiago", 7.8));
+        alunos.add(new Aluno("Renato", 6.8));
+        alunos.add(new Aluno("Alan", 9.0));
+        alunos.add(new Aluno("Miguel", 8.5));
+
+
+
+
+    // Ordena por nome usando Comparator
+        System.out.println("Ordenado por Nome.");
+        Collections.sort(alunos, Comparator.comparing(Aluno::getNome));
+
+
+        for (Aluno aluno : alunos) {
+            System.out.println(aluno);
+        }
+
+        System.out.println(" ");
+
+    // Ordena por nota usando Comparator
+        System.out.println("Ordenado por Nota.");
+        Collections.sort(alunos, Comparator.comparing(Aluno::getNota));
+
+        for (Aluno aluno : alunos) {
+            System.out.println(aluno);
+        }
+    }
+}
